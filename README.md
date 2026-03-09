@@ -100,6 +100,7 @@ resource "hosting_fqdn" "main" {
 | `hosting_preview_config` | Preview environment configuration |
 | `hosting_uptime_monitor` | HTTP uptime health check |
 | `hosting_webhook_endpoint` | Webhook endpoint for event notifications |
+| `hosting_customer_user` | Team member with role-based access |
 
 See the [docs/](docs/) directory for full documentation on each resource.
 

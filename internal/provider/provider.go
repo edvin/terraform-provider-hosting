@@ -109,6 +109,7 @@ func (p *hostingProvider) Resources(_ context.Context) []func() resource.Resourc
 		resources.NewPreviewConfig,
 		resources.NewUptimeMonitor,
 		resources.NewWebhookEndpoint,
+		resources.NewCustomerUser,
 	}
 }
 

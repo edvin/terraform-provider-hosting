@@ -235,6 +235,18 @@ resource "hosting_egress_rule" "api" {
   description = "Allow access to external API"
 }
 
+# ─── Team Members ─────────────────────────────────────────────────
+
+resource "hosting_customer_user" "dev" {
+  user_id = var.dev_user_id
+  role    = "developer"
+}
+
+resource "hosting_customer_user" "readonly" {
+  user_id = var.viewer_user_id
+  role    = "viewer"
+}
+
 # ─── Variables ─────────────────────────────────────────────────────
 
 variable "app_key" {
@@ -250,6 +262,14 @@ variable "email_password" {
 variable "meili_key" {
   type      = string
   sensitive = true
+}
+
+variable "dev_user_id" {
+  type = string
+}
+
+variable "viewer_user_id" {
+  type = string
 }
 
 # ─── Outputs ───────────────────────────────────────────────────────
