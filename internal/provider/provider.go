@@ -107,6 +107,7 @@ func (p *hostingProvider) Resources(_ context.Context) []func() resource.Resourc
 		resources.NewWebappDaemon,
 		resources.NewWebappCronJob,
 		resources.NewPreviewConfig,
+		resources.NewUptimeMonitor,
 	}
 }
 

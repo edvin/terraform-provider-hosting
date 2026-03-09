@@ -197,6 +197,16 @@ resource "hosting_container_env_vars" "meilisearch" {
   }
 }
 
+# ─── Uptime Monitoring ─────────────────────────────────────────────
+
+resource "hosting_uptime_monitor" "main" {
+  tenant_id        = var.tenant_id
+  url              = "https://myapp.example.com/healthz"
+  interval_seconds = 60
+  timeout_seconds  = 10
+  expected_status  = 200
+}
+
 # ─── Networking ────────────────────────────────────────────────────
 
 resource "hosting_wireguard_peer" "dev" {
